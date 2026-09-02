@@ -3,5 +3,6 @@
   "name": "wego",
   "description": "Search and compare flights and hotels, resolve places, and generate checkout links through the wego CLI.",
   "homepage": "https://docs.wego.com",
-  "repository": "https://github.com/wego/skills"
+  "repository": "https://github.com/wego/skills",
+  "license": "Apache-2.0"
 }
