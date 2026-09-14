@@ -501,11 +501,10 @@ wego hotels rooms <hotelId> --search <searchId> \
 ```bash
 wego hotels booking-link <hotelId> \
   --rate <rateId> \
-  [--search <searchId>] [--site SG] [--locale en] \
-  [--guests <token> | --adults N --children-ages 5,11] [--country CC]
+  [--search <searchId>] [--site SG] [--locale en] [--country CC]
 ```
 
-Use the `hotelId` and `rateId` from the same funnel. Pass the known `searchId` even when the composed rate ID can supply it. For occupancy, either pass a raw `--guests` token (`adults:age:age…`) or let the CLI synthesize it from `--adults` + `--children-ages` (adults default to 2) so the audited child ages from `search`/`rooms` survive to checkout; an explicit `--guests` wins, and `--children-ages` is capped at 8 here too. Return `bookingUrl` as a clickable checkout link and state that no room has been reserved or paid for. The response also carries `expires: true`: like the flights booking link, this URL is bound to the rate's live search and stops working when it expires, loading an empty checkout page rather than erroring – so hand it to the user to open now, never as something to save or send on.
+Use the `hotelId` and `rateId` from the same funnel. Pass the known `searchId` even when the composed rate ID can supply it. You do not pass the guests or the number of rooms here, and no flag can change them. The checkout page reads the dates, the guests, the rooms and the price from the search the `rateId` came from, so the link always opens on exactly what `search` or `rooms` quoted, two rooms included, and the traveller picks their nationality on the page itself. `--country` is copied into the link and changes none of that. Return `bookingUrl` as a clickable checkout link and state that no room has been reserved or paid for. The response also carries `expires: true`: like the flights booking link, this URL is bound to the rate's live search and stops working when it expires, loading an empty checkout page rather than erroring – so hand it to the user to open now, never as something to save or send on.
 
 ## Share a hotel search
 
