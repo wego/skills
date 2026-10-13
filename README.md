@@ -1,6 +1,8 @@
 # Wego skill for AI agents
 
-Live flight and hotel search for AI agents, through the `wego` CLI.
+Live flight and hotel search for AI agents, through the
+[`wego` CLI](https://github.com/wego/cli). The skill and the CLI are both open
+source.
 
 Made by [Wego](https://www.wego.com), the travel search engine and online travel
 agency for the Middle East, North Africa and beyond. Docs, quickstart and use cases
@@ -40,6 +42,9 @@ asks for your approval before running it:
 ```bash
 curl -fsSL https://docs.wego.com/cli/install | bash
 ```
+
+The CLI's source is at [github.com/wego/cli](https://github.com/wego/cli). To
+read the install script before you run it, leave off `| bash`.
 
 If you already have the CLI, it carries the same skill and can install it for you:
 
